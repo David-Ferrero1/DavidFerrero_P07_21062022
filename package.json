@@ -1,0 +1,19 @@
+{
+  "name": "p11-front-end-search-engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenClassrooms-Student-Center/P07-front-end-search-engine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenClassrooms-Student-Center/P07-front-end-search-engine/issues"
+  },
+  "homepage": "https://github.com/OpenClassrooms-Student-Center/P07-front-end-search-engine#readme"
+}
