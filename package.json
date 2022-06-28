@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OpenClassrooms-Student-Center/P07-front-end-search-engine.git"
+    "url": "git@github.com:David-Ferrero1/DavidFerrero_P07_21062022.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OpenClassrooms-Student-Center/P07-front-end-search-engine/issues"
+    "url": "git@github.com:David-Ferrero1/DavidFerrero_P07_21062022.git/issues"
   },
-  "homepage": "https://github.com/OpenClassrooms-Student-Center/P07-front-end-search-engine#readme"
+  "homepage": "https://github.com/David-Ferrero1/DavidFerrero_P07_21062022#readme"
 }
