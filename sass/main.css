@@ -370,6 +370,136 @@ h1 {
   grid-gap: 30px;
 }
 
+.searchbar {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #E7E7E7;
+  border-radius: 0.4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.searchbar__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.searchbar__label {
+  margin: 15px;
+  position: relative;
+  top: 3px;
+}
+
+.filterblock {
+  margin: 30px 0;
+}
+
+.filterblock .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 15px 0;
+}
+
+.filterblock .filters__element {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 700;
+  margin-right: 15px;
+  padding: 25px;
+}
+
+.filterblock .filters__element--secondary {
+  background: #3282F7;
+}
+
+.filterblock .filters__element--tertiary {
+  background: #68D9A4;
+}
+
+.filterblock .filters__element--quaternary {
+  background: #ED6454;
+}
+
+.filterblock .filters__element__input {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  width: 120px;
+}
+
+.filterblock .filters__element__input::-webkit-input-placeholder {
+  color: inherit;
+  font-size: inherit;
+}
+
+.filterblock .filters__element__input:-ms-input-placeholder {
+  color: inherit;
+  font-size: inherit;
+}
+
+.filterblock .filters__element__input::-ms-input-placeholder {
+  color: inherit;
+  font-size: inherit;
+}
+
+.filterblock .filters__element__input::placeholder {
+  color: inherit;
+  font-size: inherit;
+}
+
+.filterblock .tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 15px 0;
+}
+
+.filterblock .tag__button {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.4em;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 20px;
+}
+
+.filterblock .tag__button--secondary {
+  background: #3282F7;
+}
+
+.filterblock .tag__button--tertiary {
+  background: #68D9A4;
+}
+
+.filterblock .tag__button--quaternary {
+  background: #ED6454;
+}
+
+.filterblock .tag__button img {
+  margin-left: 10px;
+}
+
 .recipe {
   border-radius: 0.4em;
   overflow: hidden;
