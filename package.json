@@ -1,19 +1,23 @@
 {
-  "name": "p11-front-end-search-engine",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:David-Ferrero1/DavidFerrero_P07_21062022.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "git@github.com:David-Ferrero1/DavidFerrero_P07_21062022.git/issues"
-  },
-  "homepage": "https://github.com/David-Ferrero1/DavidFerrero_P07_21062022#readme"
+    "name": "p11-front-end-search-engine",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "sass": "sass --watch ./sass/main.scss:./style/main.css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:David-Ferrero1/DavidFerrero_P07_21062022.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "git@github.com:David-Ferrero1/DavidFerrero_P07_21062022.git/issues"
+    },
+    "homepage": "https://github.com/David-Ferrero1/DavidFerrero_P07_21062022#readme",
+    "devDependencies": {
+        "prettier": "2.7.1"
+    }
 }
