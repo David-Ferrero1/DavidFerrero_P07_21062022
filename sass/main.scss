@@ -9,3 +9,13 @@
 
 //Layouts
 @import './layouts/header';
+@import "./layouts/grid";
+
+//Components
+@import "./components/searchbar";
+@import "./components/filter";
+@import "./components/recipe";
+
+
+//Pages
+@import "./pages/index";
