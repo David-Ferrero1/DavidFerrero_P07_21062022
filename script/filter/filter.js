@@ -26,7 +26,7 @@ async function selectAppliance() {
             filterRecettes()
             appareilButton.classList.remove('clicked')
             appareils.classList.remove('displayListitems')
-            imgDropA.classList.remove('clicked')
+            // imgDropA.classList.remove('clicked')
         })
     })
 }
@@ -41,7 +41,7 @@ async function selectUstensil() {
             filterRecettes()
             ustensilsButton.classList.remove('clicked')
             ustensils.classList.remove('displayListitems')
-            imgDropU.classList.remove('clicked')
+            // imgDropU.classList.remove('clicked')
         })
     })
 }
@@ -80,7 +80,6 @@ ustensilsButton.addEventListener('keyup', (e) => {
     ustensilRequest = e.target.value.toLowerCase()
     console.log(ingredientRequest)
 })
-
 ingredientButton.addEventListener('click', (e) => {
     ingredients.classList.toggle('displayListitems')
     ingredientButton.classList.toggle('clicked')
@@ -90,11 +89,11 @@ ingredientButton.addEventListener('click', (e) => {
 appareilButton.addEventListener('click', (e) => {
     appareils.classList.toggle('displayListitems')
     appareilButton.classList.toggle('clicked')
-    imgDropA.classList.toggle('clicked')
+    // imgDropA.classList.toggle('clicked')
 })
 
 ustensilsButton.addEventListener('click', (e) => {
     ustensils.classList.toggle('displayListitems')
     ustensilsButton.classList.toggle('clicked')
-    imgDropU.classList.toggle('clicked')
+    // imgDropU.classList.toggle('clicked')
 })
