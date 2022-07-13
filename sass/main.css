@@ -12953,7 +12953,7 @@ body {
     background: #dd5343;
 }
 
-.dropdown:hover .dropdown-menu {
+.displayListitems {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
@@ -12961,20 +12961,67 @@ body {
     -ms-grid-rows: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 0.25em 0.25em;
-    grid-template-areas: '. . . .' '. . . .' '. . . .' '. . . .';
+    grid-template-areas: '. . . ' '. . . ' '. . . ' '. . . ';
 }
 
 .dropdown-menu .dropdown-item::first-letter {
+    text-transform: uppercase;
     font-size: 1em;
+}
+
+.dropdown-menu .dropdown-item::first-letter:focus {
+    background-color: transparent;
+}
+
+.ingredients .dropdown-menu {
+    background: #3282f7;
+    top: 53px;
+    border: 0px;
+}
+
+.ingredients .dropdown-menu .dropdown-item {
+    color: #fff;
+}
+
+.ingredients .dropdown-menu .dropdown-item:hover {
+    background-color: #2474eb;
+}
+
+.appareil .dropdown-menu {
+    background: #68d9a4;
+    top: 53px;
+    border: 0px;
+}
+
+.appareil .dropdown-menu .dropdown-item {
+    color: #fff;
+}
+
+.appareil .dropdown-menu .dropdown-item:hover {
+    background-color: #56d197;
+}
+
+.ustensils .dropdown-menu {
+    background: #ed6454;
+    top: 53px;
+    border: 0px;
+}
+
+.ustensils .dropdown-menu .dropdown-item {
+    color: #fff;
+}
+
+.ustensils .dropdown-menu .dropdown-item:hover {
+    background-color: #e25242;
+}
+
+.dropdown-item:focus {
+    background-color: transparent;
 }
 
 .list-group--card li {
     list-style: none;
     padding-bottom: 6px;
-}
-
-.card-text:last-child {
-    line-height: 1.15;
 }
 
 .form-button {
@@ -13020,6 +13067,10 @@ body {
     background: #ed6454;
 }
 
+.form-button.clicked {
+    width: 300px;
+}
+
 .appareil,
 .ustensils,
 .ingredients {
@@ -13030,8 +13081,21 @@ body {
 .ustensils .imgDrop,
 .ingredients .imgDrop {
     position: absolute;
-    left: 142px;
+    right: 15px;
     top: 25px;
+}
+
+.appareil .imgDrop.ingredient.clicked,
+.appareil .imgDrop.appareil.clicked,
+.appareil .imgDrop.ustensils.clicked,
+.ustensils .imgDrop.ingredient.clicked,
+.ustensils .imgDrop.appareil.clicked,
+.ustensils .imgDrop.ustensils.clicked,
+.ingredients .imgDrop.ingredient.clicked,
+.ingredients .imgDrop.appareil.clicked,
+.ingredients .imgDrop.ustensils.clicked {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .form-button::-webkit-input-placeholder {
@@ -13054,7 +13118,15 @@ body {
     color: #fff;
     border-color: #80aff5;
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(0, 92, 228, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(0, 92, 228, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(0, 94, 235, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(0, 94, 235, 0.25);
+}
+
+.selected-items .btn {
+    padding-right: 25px;
+    background-image: url(/img/exit-blc.png);
+    background-size: 20px;
+    background-position: right center;
+    background-repeat: no-repeat;
 }
 /*# sourceMappingURL=main.css.map */

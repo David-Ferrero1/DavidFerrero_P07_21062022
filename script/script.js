@@ -4,7 +4,6 @@ displayResult()
 async function filterRecettes(recipes, ingredients) {
     recipes = await fetchSearch()
     let recettes = []
-
     recipes.filter((recipe) => {
         if (
             recipe.name.toLowerCase().includes(searchTerm) ||
@@ -21,7 +20,9 @@ async function filterRecettes(recipes, ingredients) {
 
     if (appareilsTerm.length > 0) {
         recettes = recettes.filter((recette) =>
-            recette.appliance.toLowerCase().includes(appareilsTerm)
+            recette.appliance
+                .toLowerCase()
+                .includes(appareilsTerm.toString().toLowerCase())
         )
     }
 
@@ -30,7 +31,7 @@ async function filterRecettes(recipes, ingredients) {
             recettes = recettes.filter((recette) =>
                 recette.ustensils
                     .map((ustensil) => ustensil.toLowerCase())
-                    .includes(mot)
+                    .includes(mot.toLowerCase())
             )
         })
     }
@@ -40,7 +41,7 @@ async function filterRecettes(recipes, ingredients) {
             recettes = recettes.filter((recette) =>
                 recette.ingredients
                     .map((ingredient) => ingredient.ingredient.toLowerCase())
-                    .includes(mot)
+                    .includes(mot.toLowerCase())
             )
         })
     }
@@ -52,7 +53,6 @@ async function filterRecettes(recipes, ingredients) {
     return recettes, totalItems
 }
 //filterRecettes()
-
 async function functionRemoveIngredients() {
     recipes = await fetchSearch()
     const selectedItems = document.querySelectorAll('.selected-items .btn')
