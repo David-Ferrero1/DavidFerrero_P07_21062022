@@ -19,5 +19,9 @@
     "homepage": "https://github.com/David-Ferrero1/DavidFerrero_P07_21062022#readme",
     "devDependencies": {
         "prettier": "2.7.1"
+    },
+    "dependencies": {
+        "bootstrap": "^5.2.0-beta1",
+        "bootstrap-icons": "^1.8.3"
     }
 }

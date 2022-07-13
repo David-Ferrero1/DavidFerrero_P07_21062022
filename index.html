@@ -4,76 +4,124 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <link rel="stylesheet" href="./sass/main.css" />
-        <link
-            rel="shortcut icon"
-            href="./assets/img/logo.svg"
-            type="img/x-icon"
-        />
+        <link rel="stylesheet" href="/sass/main.css" />
         <title>Les petits plats</title>
     </head>
     <body>
-        <header class="header">
+        <div id="header" class="text-center px-4 container">
             <img
-                class="header--logo"
-                src="./assets/img/logo.svg"
-                alt="Logo les petits plats"
+                src="./assets/img/logo_edited-250.png"
+                alt="logo les petis plats"
+                class="d-block mx-auto mb-4 mt-4"
+                width="250"
             />
-            <h1 class="header--title">Les petits plats</h1>
-        </header>
-        <main class="main">
-            <section class="search-section">
-                <div class="searchbar">
-                    <input class="searchbar__input" id="search" type="text" placeholder="Rechercher une recette" name="search">
-                    <label class="searchbar__label" for="search">
-                        <img src="./assets/img/search.svg" alt="icone loupe rechercher">
-                    </label>
+        </div>
+
+        <!-- moteur de recherche -->
+        <div class="container row mx-auto">
+            <form class="d-block">
+                <div class="d-flex search-engine-form p-1 rounded">
+                    <input
+                        id="search-engine"
+                        class="search form-control me-2 p-3"
+                        type="search"
+                        placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+                        aria-label="Search"
+                    />
+                    <button class="btn search" type="submit">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="#000"
+                            class="bi bi-search"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                            />
+                        </svg>
+                    </button>
                 </div>
-                <div class="filterblock">
-                    <div class="tag">
-                        <button class="tag__button tag__button--secondary">
-                            Coco
-                            <img src="./assets/img/close.svg" alt="icon fermer">
-                        </button>
+                <div id="auto-complete" class="d-flex"></div>
+                <div class="d-flex flex-wrap mt-3 mb-3">
+                    <div
+                        id="selected-items"
+                        class="flex-100 selected-items"
+                    ></div>
+                    <div class="dropdown ingredients me-2">
+                        <input
+                            id="search-ingredient"
+                            class="form-button blue dropdown-toggle py-3 mb-2"
+                            type="search"
+                            placeholder="Ingredients"
+                            id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        />
+                        <img
+                            class="imgDrop"
+                            src="./assets/img/arrow-down-sign-to-navigate22.png"
+                            width="12"
+                        />
+                        <ul
+                            class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton1"
+                        ></ul>
                     </div>
-                    <div class="filters">
-                        <div id="ingredients" class="filters__element filters__element--secondary">
-                            <div class="filters__element__button">
-                                <input class="filters__element__button__input" type="text" placeholder="Ingrédients">
-                                <label>
-                                    <img src="./assets/img/arrow.svg" alt="icon flèche vers le bas">
-                                </label>
-                            </div>
-                            <ul class="filters__element__list filters__element__list--hide">
-                            </ul>
-                        </div>
-                        <div id="appliances" class="filters__element filters__element--tertiary">
-                            <div class="filters__element__button">
-                                <input class="filters__element__button__input" type="text" placeholder="Appareils">
-                                <label>
-                                    <img src="./assets/img/arrow.svg" alt="icon flèche vers le bas">
-                                </label>
-                            </div>
-                            <ul class="filters__element__list filters__element__list--hide">
-                            </ul>
-                        </div>
-                        <div id="ustensils" class="filters__element filters__element--quaternary">
-                            <div class="filters__element__button">
-                                <input class="filters__element__button__input" type="text" placeholder="Ustensils">
-                                <label>
-                                    <img src="./assets/img/arrow.svg" alt="icon flèche vers le bas">
-                                </label>
-                            </div>
-                            <ul class="filters__element__list filters__element__list--hide">
-                            </ul>
-                        </div>
+                    <div class="dropdown appareil me-2">
+                        <input
+                            id="search-appareil"
+                            class="form-button green dropdown-toggle py-3 mb-2"
+                            type="search"
+                            placeholder="Appareils"
+                            id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        />
+                        <img
+                            class="imgDrop"
+                            src="./assets/img/arrow-down-sign-to-navigate22.png"
+                            width="12"
+                        />
+                        <ul
+                            class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton1"
+                        ></ul>
+                    </div>
+                    <div class="dropdown ustensils me-2">
+                        <input
+                            id="search-ustensils"
+                            class="form-button tangerine dropdown-toggle py-3 mb-2"
+                            type="search"
+                            placeholder="Ustensils"
+                            id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        />
+                        <img
+                            class="imgDrop"
+                            src="./assets/img/arrow-down-sign-to-navigate22.png"
+                            width="12"
+                        />
+                        <ul
+                            class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton1"
+                        >
+                            i>
+                        </ul>
                     </div>
                 </div>
-            </section>
-            <section class="result-section grid">
-            </section>
-        </main>
-        <script type="module" src="/script/index.js"></script>
+            </form>
+        </div>
+
+        <!-- articles -->
+        <div id="articles" class="articles container d-flex row mx-auto"></div>
+        <script src="/script/variables/variables.js"></script>
+        <script src="/script/fetch.js"></script>
+        <script src="/script/display/displayResult.js"></script>
+        <script src="/script/display/displayFilter.js"></script>
+        <script src="/script/filter/filter.js"></script>
+        <script src="/script/script.js"></script>
     </body>
 </html>

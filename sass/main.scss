@@ -1,21 +1,169 @@
-//Utils
-@import './utils/variables';
-// @import "./utils/mixins";
-
-//Base
-@import './base/reset';
-@import './base/typo';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 @import './base/base';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-//Layouts
-@import './layouts/header';
-@import "./layouts/grid";
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+.list-group--card {
+    li {
+        padding: 0;
+        border: 0;
+        background: transparent;
+    }
+}
+// Card
+.card {
+    line-height: 1;
+    border-radius: 0.5rem;
+    background: $gray;
+    font-size: 0.8rem;
+    flex: 1 1 0;
+    .time {
+        font-size: 1.15rem;
+        font-weight: 700;
+    }
+    p {
+        margin-bottom: 0.5rem;
+        svg {
+            margin-bottom: 5px;
+        }
+    }
+    h5 {
+        font-size: 1.15rem;
+    }
+}
+//*-- Search Engine *///--
+.search-engine-form {
+    background: $gray;
+    .form-control {
+        border: 0;
+        background: $gray;
+        &::placeholder {
+            color: rgba($black, 0.45);
+        }
+    }
+}
+.bg-gray {
+    background: rgba($black, 0.15);
+}
+.flex-100 {
+    flex: 0 0 100%;
+}
+.dropdown {
+    @include media-breakpoint-down(md) {
+        width: 100%;
+    }
+}
+.btn {
+    color: rgba($white, 0.85);
+    @include media-breakpoint-down(md) {
+        .dropdown & {
+            width: 100%;
+        }
+    }
+    &:hover {
+        color: $white;
+    }
+    &-blue {
+        background: $blue;
+        &:hover {
+            background: $blue-hover;
+        }
+    }
+    &-greenwater {
+        background: $greenwater;
+        &:hover {
+            background: $greenwater-hover;
+        }
+    }
+    &-tangerine {
+        background: $tangerine;
+        &:hover {
+            background: $tangerine-hover;
+        }
+    }
+}
+.dropdown {
+    &:hover {
+        .dropdown-menu {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 0.25em 0.25em;
+            grid-template-areas:
+                '. . . .'
+                '. . . .'
+                '. . . .'
+                '. . . .';
+        }
+    }
+}
 
-//Components
-@import "./components/searchbar";
-@import "./components/filter";
-@import "./components/recipe";
+.dropdown-menu {
+    .dropdown-item::first-letter {
+        //text-transform: uppercase;
+        font-size: 1em;
+    }
+}
 
+.list-group--card li {
+    list-style: none;
+    padding-bottom: 6px;
+}
+.card-text:last-child {
+    line-height: 1.15;
+}
 
-//Pages
-@import "./pages/index";
+.form-button {
+    &.blue {
+        background: #3282f7;
+    }
+    &.green {
+        background: #68d9a4;
+    }
+    &.tangerine {
+        background: #ed6454;
+    }
+    width: 170px;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    position: relative;
+}
+
+.appareil,
+.ustensils,
+.ingredients {
+    position: relative;
+    .imgDrop {
+        position: absolute;
+        left: 142px;
+        top: 25px;
+    }
+}
+
+.form-button::placeholder {
+    color: rgba($white, 0.75);
+}
+
+.form-button:focus {
+    color: #fff;
+    border-color: #80aff5;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(0, 92, 228, 0.25);
+}
