@@ -10,7 +10,7 @@ async function selectIngredient() {
             filterRecettes()
             ingredientButton.classList.remove('clicked')
             ingredients.classList.remove('displayListitems')
-            imgDropI.classList.remove('clicked')
+            // imgDropI.classList.remove('clicked')
         })
     })
 }
@@ -84,7 +84,7 @@ ustensilsButton.addEventListener('keyup', (e) => {
 ingredientButton.addEventListener('click', (e) => {
     ingredients.classList.toggle('displayListitems')
     ingredientButton.classList.toggle('clicked')
-    imgDropI.classList.toggle('clicked')
+    // imgDropI.classList.toggle('clicked')
 })
 
 appareilButton.addEventListener('click', (e) => {
