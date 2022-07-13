@@ -5,19 +5,17 @@ async function filterRecettes() {
     recipes = await fetchSearch()
     let recettes = []
 
-    recipes.filter((recipe) => {
-        if (
-            recipe.name.toLowerCase().includes(searchTerm) ||
-            recipe.description.toLowerCase().includes(searchTerm) ||
-            recipe.ingredients
-                .filter((ingredient) => ingredient.ingredient)
-                .toString()
-                .toLowerCase()
-                .includes(searchTerm)
-        ) {
-            recettes.push(recipe)
+    for(let i = 0; i< recipes.length; i++){
+        if(recipes[i].name.toLowerCase().includes(searchTerm) || recipes[i].description.toLowerCase().includes(searchTerm)){
+          recettes.push(recipes[i]);
+          for(let y = 0; y< recipes.length ; y++){
+            for(let z = 0; z<recipes[i].ingredients.length; z++){
+              if(recipes[i].ingredients[z].ingredient.toLowerCase().includes(searchTerm)){
+              }
+            }
+           }
         }
-    })
+    }
     if (appareilsTerm.length > 0) {
         recettes = recettes.filter((recette) =>
             recette.appliance
@@ -49,7 +47,6 @@ async function filterRecettes() {
 
     return recettes
 }
-//filterRecettes()
 
 async function functionRemoveIngredients() {
     recipes = await fetchSearch()
@@ -66,7 +63,6 @@ async function functionRemoveIngredients() {
     selectedIngredients.forEach((ingredient) => {
         ingredient.addEventListener('click', (e) => {
             e.preventDefault()
-            console.log(ingredient.innerText)
             removeIngredients.push(ingredient.innerText)
 
             console.log(ingredientTerm)
@@ -74,9 +70,7 @@ async function functionRemoveIngredients() {
                 removeIngredients.forEach((remove) => {
                     if (term === remove) {
                         let idTerm = ingredientTerm.indexOf(term)
-                        console.log(ingredientTerm.indexOf(term))
                         ingredientTerm.splice(idTerm, 1)
-                        console.log(ingredientTerm)
                         filterRecettes()
                         ingredient.remove()
                     }
@@ -88,17 +82,13 @@ async function functionRemoveIngredients() {
     selectedAppliances.forEach((appliance) => {
         appliance.addEventListener('click', (e) => {
             e.preventDefault()
-            console.log(appliance.innerText)
             removeAppliances.push(appliance.innerText)
 
-            console.log(appareilsTerm)
             appareilsTerm.map((term) =>
                 removeAppliances.forEach((remove) => {
                     if (term === remove) {
                         let idTerm = appareilsTerm.indexOf(term)
-                        console.log(appareilsTerm.indexOf(term))
                         appareilsTerm.splice(idTerm, 1)
-                        console.log(appareilsTerm)
                         filterRecettes()
                         appliance.remove()
                     }
@@ -110,17 +100,13 @@ async function functionRemoveIngredients() {
     selectedUstensils.forEach((ustensil) => {
         ustensil.addEventListener('click', (e) => {
             e.preventDefault()
-            console.log(ustensil.innerText)
             removeUstensils.push(ustensil.innerText)
 
-            console.log(ustensilsTerm)
             ustensilsTerm.map((term) =>
                 removeUstensils.forEach((remove) => {
                     if (term === remove) {
                         let idTerm = ustensilsTerm.indexOf(term)
-                        console.log(ustensilsTerm.indexOf(term))
                         ustensilsTerm.splice(idTerm, 1)
-                        console.log(ustensilsTerm)
                         filterRecettes()
                         ustensil.remove()
                     }

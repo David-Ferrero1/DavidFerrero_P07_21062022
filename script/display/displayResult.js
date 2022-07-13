@@ -3,8 +3,6 @@ async function displayResult(recettesList) {
         recettesList = await fetchSearch()
     }
 
-    console.log(recettesList)
-
     results.innerHTML = recettesList
         .map(
             (recette) =>
