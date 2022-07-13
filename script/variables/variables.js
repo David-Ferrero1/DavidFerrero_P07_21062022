@@ -24,7 +24,8 @@ let ustensilsTerm = []
 
 let listeMotCles = []
 let removeIngredients = []
-let totalItems = []
+let removeAppliances = []
+let removeUstensils = []
 
 let ingredientsList = []
 let applianceList = []

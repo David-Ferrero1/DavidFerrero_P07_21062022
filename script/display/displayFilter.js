@@ -1,8 +1,5 @@
 // Filtre ingredients
-async function displayIngredients(searchTerm) {
-    if (searchTerm == undefined) {
-        searchTerm = ''
-    }
+async function displayIngredients() {
     recettes = await fetchSearch()
     recettes
         .filter((recette) =>
@@ -10,7 +7,6 @@ async function displayIngredients(searchTerm) {
                 .map((ingredient) => ingredient.ingredient)
                 .toString()
                 .toLowerCase()
-                .includes(searchTerm)
         )
         .map((recette) => {
             recette.ingredients.map(
@@ -33,15 +29,10 @@ async function displayIngredients(searchTerm) {
 displayIngredients()
 
 //filtre Appareils
-async function displayAppliances(searchTerm) {
-    if (searchTerm == undefined) {
-        searchTerm = ''
-    }
+async function displayAppliances() {
     recettes = await fetchSearch()
     recettes
-        .filter((recette) =>
-            recette.appliance.toLowerCase().includes(searchTerm)
-        )
+        .filter((recette) => recette.appliance.toLowerCase())
         .map((recette) => {
             applianceList.push(recette.appliance.toLowerCase())
             applianceList = [...new Set(applianceList)]
@@ -57,10 +48,7 @@ async function displayAppliances(searchTerm) {
 displayAppliances()
 
 //filtre Appareils
-async function displayUstensils(searchTerm) {
-    if (searchTerm == undefined) {
-        searchTerm = ''
-    }
+async function displayUstensils() {
     recettes = await fetchSearch()
     recettes
         .filter((recette) =>
@@ -68,7 +56,6 @@ async function displayUstensils(searchTerm) {
                 .map((ustensil) => ustensil)
                 .toString()
                 .toLowerCase()
-                .includes(searchTerm)
         )
         .map((recette) => {
             recette.ustensils.map(

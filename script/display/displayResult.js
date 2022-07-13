@@ -2,7 +2,8 @@ async function displayResult(recettesList) {
     if (recettesList === undefined) {
         recettesList = await fetchSearch()
     }
-    console.log(recettesList.length)
+
+    console.log(recettesList)
 
     results.innerHTML = recettesList
         .map(
@@ -27,6 +28,7 @@ async function displayResult(recettesList) {
         <div class="card-body d-flex justify-content-between mb-5 flex-wrap">
         <div class="list col-md-5">
           <ul class="list-group list-group--card">
+       
              ${recette.ingredients
                  .map(
                      (ingredient) =>
@@ -42,7 +44,7 @@ async function displayResult(recettesList) {
            </ul>
         </div>  
         <div class="card-text col-md-6">
-          ${recette.description}
+          ${recette.description.substring(0, 300)} ...
         </div>
         </div>
        </div>
@@ -50,9 +52,7 @@ async function displayResult(recettesList) {
       `
         )
         .join('')
-
-    if (recettesList.length == 0) {
-        results.innerHTML = `<p class="mt-5 lead text-center">Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson »</p>`
-        console.log('toto')
+    if (recettesList.length === 0) {
+        results.innerHTML = `<p class="mt-5 lead text-center text-secondary">Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson »</p><img class="no-result" src="./img/salad.png" width="512"><br>`
     }
 }

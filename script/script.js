@@ -1,9 +1,10 @@
 functionSearchTerm()
 displayResult()
 
-async function filterRecettes(recipes, ingredients) {
+async function filterRecettes() {
     recipes = await fetchSearch()
     let recettes = []
+
     recipes.filter((recipe) => {
         if (
             recipe.name.toLowerCase().includes(searchTerm) ||
@@ -17,7 +18,6 @@ async function filterRecettes(recipes, ingredients) {
             recettes.push(recipe)
         }
     })
-
     if (appareilsTerm.length > 0) {
         recettes = recettes.filter((recette) =>
             recette.appliance
@@ -25,7 +25,6 @@ async function filterRecettes(recipes, ingredients) {
                 .includes(appareilsTerm.toString().toLowerCase())
         )
     }
-
     if (ustensilsTerm.length > 0) {
         ustensilsTerm.map((mot) => {
             recettes = recettes.filter((recette) =>
@@ -35,7 +34,6 @@ async function filterRecettes(recipes, ingredients) {
             )
         })
     }
-
     if (ingredientTerm.length > 0) {
         ingredientTerm.map((mot) => {
             recettes = recettes.filter((recette) =>
@@ -48,56 +46,86 @@ async function filterRecettes(recipes, ingredients) {
 
     displayResult(recettes)
     functionRemoveIngredients()
-    totalItems = totalItems.concat(ingredientTerm, ustensilsTerm, appareilsTerm)
-    totalItems = [...new Set(totalItems)]
-    return recettes, totalItems
+
+    return recettes
 }
 //filterRecettes()
+
 async function functionRemoveIngredients() {
     recipes = await fetchSearch()
-    const selectedItems = document.querySelectorAll('.selected-items .btn')
-    console.log(selectedItems)
+    const selectedIngredients = document.querySelectorAll(
+        '.selected-items .btn-blue'
+    )
+    const selectedAppliances = document.querySelectorAll(
+        '.selected-items .btn-greenwater'
+    )
+    const selectedUstensils = document.querySelectorAll(
+        '.selected-items .btn-tangerine'
+    )
 
-    console.log(totalItems)
-    selectedItems.forEach((selectedIngredient) => {
-        selectedIngredient.addEventListener('click', (e) => {
+    selectedIngredients.forEach((ingredient) => {
+        ingredient.addEventListener('click', (e) => {
             e.preventDefault()
-            removeIngredients.push(selectedIngredient.innerText)
-            if (removeIngredients.length >= 1) {
-                removeIngredients.forEach((mot) => {
-                    totalItems.map((ingredient) => {
-                        if (ingredient != mot) {
-                            totalItems = [ingredient]
-                        }
-                    })
-                })
-                totalItems.map((mot) => {
-                    recettes = recipes.filter(
-                        (recette) =>
-                            recette.ingredients
-                                .map((ingredient) =>
-                                    ingredient.ingredient.toLowerCase()
-                                )
-                                .includes(mot) ||
-                            recette.ustensils
-                                .map((ustensil) => ustensil.toLowerCase())
-                                .includes(mot) ||
-                            recette.appliance.toLowerCase().includes(mot)
-                    )
-                })
-                displayResult(recettes)
-            }
-            removeIngredients.forEach((mot) => {
-                totalItems.map((ingredient) => {
-                    if (ingredient === mot) {
-                        totalItems = []
-                        recettes = recipes
-                        displayResult(recettes)
-                        location.reload()
+            console.log(ingredient.innerText)
+            removeIngredients.push(ingredient.innerText)
+
+            console.log(ingredientTerm)
+            ingredientTerm.map((term) =>
+                removeIngredients.forEach((remove) => {
+                    if (term === remove) {
+                        let idTerm = ingredientTerm.indexOf(term)
+                        console.log(ingredientTerm.indexOf(term))
+                        ingredientTerm.splice(idTerm, 1)
+                        console.log(ingredientTerm)
+                        filterRecettes()
+                        ingredient.remove()
                     }
                 })
-            })
-            selectedIngredient.remove()
+            )
+        })
+    })
+
+    selectedAppliances.forEach((appliance) => {
+        appliance.addEventListener('click', (e) => {
+            e.preventDefault()
+            console.log(appliance.innerText)
+            removeAppliances.push(appliance.innerText)
+
+            console.log(appareilsTerm)
+            appareilsTerm.map((term) =>
+                removeAppliances.forEach((remove) => {
+                    if (term === remove) {
+                        let idTerm = appareilsTerm.indexOf(term)
+                        console.log(appareilsTerm.indexOf(term))
+                        appareilsTerm.splice(idTerm, 1)
+                        console.log(appareilsTerm)
+                        filterRecettes()
+                        appliance.remove()
+                    }
+                })
+            )
+        })
+    })
+
+    selectedUstensils.forEach((ustensil) => {
+        ustensil.addEventListener('click', (e) => {
+            e.preventDefault()
+            console.log(ustensil.innerText)
+            removeUstensils.push(ustensil.innerText)
+
+            console.log(ustensilsTerm)
+            ustensilsTerm.map((term) =>
+                removeUstensils.forEach((remove) => {
+                    if (term === remove) {
+                        let idTerm = ustensilsTerm.indexOf(term)
+                        console.log(ustensilsTerm.indexOf(term))
+                        ustensilsTerm.splice(idTerm, 1)
+                        console.log(ustensilsTerm)
+                        filterRecettes()
+                        ustensil.remove()
+                    }
+                })
+            )
         })
     })
 }
