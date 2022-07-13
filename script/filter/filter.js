@@ -44,21 +44,12 @@ function functionSearchTerm() {
     searchInput.addEventListener('input', (e) => {
         searchTerm = e.target.value.toLowerCase()
         filterRecettes()
-        displayIngredients()
-        displayAppliances()
-        displayUstensils()
+        displayIngredients(searchTerm)
+        displayAppliances(searchTerm)
+        displayUstensils(searchTerm)
         return searchTerm
     })
 }
-
-searchButton.addEventListener('click', (e) => {
-    e.preventDefault()
-    selectedItems.innerHTML += `
-    <button class="btn btn-tangerine py-3 mb-2">${searchTerm}</button>
-    `
-    filterRecettes()
-    getMotsCles(searchTerm)
-})
 
 ingredientButton.addEventListener('input', (e) => {
     ingredientRequest = e.target.value.toLowerCase()

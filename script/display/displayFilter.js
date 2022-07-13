@@ -4,7 +4,6 @@ async function displayIngredients(searchTerm) {
         searchTerm = ''
     }
     recettes = await fetchSearch()
-    let ingredientsList = []
     recettes
         .filter((recette) =>
             recette.ingredients
@@ -39,7 +38,6 @@ async function displayAppliances(searchTerm) {
         searchTerm = ''
     }
     recettes = await fetchSearch()
-    let applianceList = []
     recettes
         .filter((recette) =>
             recette.appliance.toLowerCase().includes(searchTerm)
@@ -64,7 +62,6 @@ async function displayUstensils(searchTerm) {
         searchTerm = ''
     }
     recettes = await fetchSearch()
-    let ustensilList = []
     recettes
         .filter((recette) =>
             recette.ustensils
