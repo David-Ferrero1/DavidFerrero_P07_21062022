@@ -42,7 +42,6 @@ async function selectUstensil() {
             ustensilsButton.classList.remove('clicked')
             ustensils.classList.remove('displayListitems')
             imgDropU.classList.remove('clicked')
-            console.log(imgDropU)
         })
     })
 }

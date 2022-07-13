@@ -8,14 +8,14 @@
         <title>Les petits plats</title>
     </head>
     <body>
-        <div id="header" class="text-center px-4 container">
+        <header id="header" class="text-center px-4 container">
             <img
                 src="./assets/img/logo_edited-250.png"
                 alt="logo les petis plats"
                 class="d-block mx-auto mb-4 mt-4"
                 width="250"
             />
-        </div>
+        </header>
 
         <!-- Barre de recherche -->
         <div class="container row mx-auto">
@@ -27,8 +27,14 @@
                         type="search"
                         placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
                         aria-label="Search"
+                        value=""
                     />
-                    <button class="btn search" type="submit">
+                    <button
+                        class="btn search"
+                        type="submit"
+                        value="search"
+                        name="search"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -36,6 +42,7 @@
                             fill="#000"
                             class="bi bi-search"
                             viewBox="0 0 16 16"
+                            alt="search"
                         >
                             <path
                                 d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
@@ -60,7 +67,7 @@
                             aria-expanded="false"
                         />
                         <img
-                            class="imgDrop ingredient"
+                            class="img-drop ingredient"
                             src="./assets/img/arrow-down-sign-to-navigate22.png"
                             width="12"
                         />
@@ -77,10 +84,10 @@
                             placeholder="Appareils"
                             id="dropdownMenuButton1"
                             data-bs-toggle="dropdown"
-                            aria-expanded="false"
+                            aria-label="search-appareil"
                         />
                         <img
-                            class="imgDrop appareil"
+                            class="img-drop appareil"
                             src="./assets/img/arrow-down-sign-to-navigate22.png"
                             width="12"
                         />
@@ -97,25 +104,26 @@
                             placeholder="Ustensils"
                             id="dropdownMenuButton1"
                             data-bs-toggle="dropdown"
-                            aria-expanded="false"
+                            aria-label="search-ustensils"
                         />
                         <img
-                            class="imgDrop ustensils"
+                            class="img-drop ustensils"
                             src="./assets/img/arrow-down-sign-to-navigate22.png"
                             width="12"
                         />
                         <ul
                             class="dropdown-menu"
                             aria-labelledby="dropdownMenuButton1"
-                        >
-                            i>
-                        </ul>
+                        ></ul>
                     </div>
                 </div>
             </form>
         </div>
 
-        <div id="articles" class="articles container d-flex row mx-auto"></div>
+        <main
+            id="articles"
+            class="articles container-lg d-flex row mx-auto"
+        ></main>
 
         <script src="/script/variables/variables.js"></script>
         <script src="/script/fetch.js"></script>

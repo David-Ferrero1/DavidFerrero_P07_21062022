@@ -49,7 +49,6 @@ async function filterRecettes() {
 
     return recettes
 }
-//filterRecettes()
 
 async function functionRemoveIngredients() {
     recipes = await fetchSearch()
@@ -68,8 +67,9 @@ async function functionRemoveIngredients() {
             e.preventDefault()
             console.log(ingredient.innerText)
             removeIngredients.push(ingredient.innerText)
-
-            console.log(ingredientTerm)
+            if (ingredientTerm.length <= 0) {
+                ingredient.remove()
+            }
             ingredientTerm.map((term) =>
                 removeIngredients.forEach((remove) => {
                     if (term === remove) {
@@ -88,7 +88,9 @@ async function functionRemoveIngredients() {
     selectedAppliances.forEach((appliance) => {
         appliance.addEventListener('click', (e) => {
             e.preventDefault()
-            console.log(appliance.innerText)
+            if (appareilsTerm.length <= 0) {
+                appliance.remove()
+            }
             removeAppliances.push(appliance.innerText)
 
             console.log(appareilsTerm)
