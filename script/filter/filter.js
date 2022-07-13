@@ -10,7 +10,7 @@ async function selectIngredient() {
             filterRecettes()
             ingredientButton.classList.remove('clicked')
             ingredients.classList.remove('displayListitems')
-            // imgDropI.classList.remove('clicked')
+            imgDropI.classList.remove('clicked')
         })
     })
 }
@@ -26,7 +26,7 @@ async function selectAppliance() {
             filterRecettes()
             appareilButton.classList.remove('clicked')
             appareils.classList.remove('displayListitems')
-            // imgDropA.classList.remove('clicked')
+            imgDropA.classList.remove('clicked')
         })
     })
 }
@@ -41,7 +41,8 @@ async function selectUstensil() {
             filterRecettes()
             ustensilsButton.classList.remove('clicked')
             ustensils.classList.remove('displayListitems')
-            // imgDropU.classList.remove('clicked')
+            imgDropU.classList.remove('clicked')
+            console.log(imgDropU)
         })
     })
 }
@@ -101,17 +102,17 @@ ustensilsButton.addEventListener('keyup', (e) => {
 ingredientButton.addEventListener('click', (e) => {
     ingredients.classList.toggle('displayListitems')
     ingredientButton.classList.toggle('clicked')
-    // imgDropI.classList.toggle('clicked')
+    imgDropI.classList.toggle('clicked')
 })
 
 appareilButton.addEventListener('click', (e) => {
     appareils.classList.toggle('displayListitems')
     appareilButton.classList.toggle('clicked')
-    // imgDropA.classList.toggle('clicked')
+    imgDropA.classList.toggle('clicked')
 })
 
 ustensilsButton.addEventListener('click', (e) => {
     ustensils.classList.toggle('displayListitems')
     ustensilsButton.classList.toggle('clicked')
-    // imgDropU.classList.toggle('clicked')
+    imgDropU.classList.toggle('clicked')
 })
