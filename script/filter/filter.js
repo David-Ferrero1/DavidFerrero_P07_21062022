@@ -54,14 +54,8 @@ function functionSearchTerm() {
             displayIngredients(searchTerm)
             displayAppliances(searchTerm)
             displayUstensils(searchTerm)
-        } else if (searchTerm.length <= 3) {
-            displayResult()
-            functionRemoveIngredients()
-        } else {
-            return searchTerm
         }
-
-        //return searchTerm
+        return searchTerm
     })
 }
 
