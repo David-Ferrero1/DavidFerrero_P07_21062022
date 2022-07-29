@@ -47,19 +47,15 @@ async function selectUstensil() {
 }
 
 function functionSearchTerm() {
-    searchInput.addEventListener('input', (e) => {
+    searchInput.addEventListener('keyup', (e) => {
         searchTerm = e.target.value.toLowerCase()
         if (searchTerm.length >= 3) {
             filterRecettes()
             displayIngredients(searchTerm)
             displayAppliances(searchTerm)
             displayUstensils(searchTerm)
-        } else if (searchTerm.length <= 3) {
-            displayResult()
-            functionRemoveIngredients()
-        } else {
-            return searchTerm
         }
+        return searchTerm
     })
 }
 
