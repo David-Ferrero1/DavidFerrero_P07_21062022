@@ -49,12 +49,17 @@ async function selectUstensil() {
 function functionSearchTerm() {
     searchInput.addEventListener('input', (e) => {
         searchTerm = e.target.value.toLowerCase()
-        filterRecettes()
-        displayIngredients(searchTerm)
-        displayAppliances(searchTerm)
-        displayUstensils(searchTerm)
-
-        return searchTerm
+        if (searchTerm.length >= 3) {
+            filterRecettes()
+            displayIngredients(searchTerm)
+            displayAppliances(searchTerm)
+            displayUstensils(searchTerm)
+        } else if (searchTerm.length <= 3) {
+            displayResult()
+            functionRemoveIngredients()
+        } else {
+            return searchTerm
+        }
     })
 }
 
