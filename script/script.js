@@ -4,8 +4,8 @@ displayResult()
 async function filterRecettes() {
     recipes = await fetchSearch()
     let recettes = []
-
-    for (let i = 0; i < recipes.length; i++) {
+    if (searchTerm.length >=3){
+         for (let i = 0; i < recipes.length; i++) {
         if (
             recipes[i].name.toLowerCase().includes(searchTerm) ||
             recipes[i].description.toLowerCase().includes(searchTerm)
@@ -24,6 +24,10 @@ async function filterRecettes() {
             }
         }
     }
+    } else {
+        recettes = recipes;
+    }
+   
     if (appareilsTerm.length > 0) {
         recettes = recettes.filter((recette) =>
             recette.appliance
@@ -73,7 +77,6 @@ async function functionRemoveIngredients() {
             e.preventDefault()
             removeIngredients.push(ingredient.innerText)
 
-            console.log(ingredientTerm)
             ingredientTerm.map((term) =>
                 removeIngredients.forEach((remove) => {
                     if (term === remove) {
