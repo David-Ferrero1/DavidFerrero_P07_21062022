@@ -41,7 +41,7 @@ async function displayResult(recettesList) {
                       '</li>'
               )
               .join('')}
-           </ul>
+          </ul>
         </div>  
         <div class="card-text col-md-6">
           ${recette.description.substring(0, 300)} ...
